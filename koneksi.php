@@ -3,7 +3,7 @@
     $hostname = "localhost";
     $userDataBase = "root";
     $passwordUser = "";
-    $dataBaseName = "kuliah_pemprograman_web";
+    $dataBaseName = "";
 
     $koneksi = mysqli_connect($hostname,$userDataBase,$passwordUser,$dataBaseName) or die (mysqli_error());
 

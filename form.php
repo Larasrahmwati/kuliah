@@ -1,6 +1,7 @@
 <?php
   include "tampilkan_data.php";
   include "edit_data.php";
+  include "cari_data.php";
 
   $data_edit = mysqli_fetch_assoc($proses_ambil);
 ?>
