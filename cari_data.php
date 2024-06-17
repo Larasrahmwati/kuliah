@@ -1,17 +1,17 @@
 <?php
 include 'koneksi.php';
 
-$npm = isset($_GET['npm']) ? mysqli_real_escape_string($koneksi, $_GET['npm']) : '';
+$npm = isset($_GET['id']) ? mysqli_real_escape_string($koneksi, $_GET['id']) : '';
 $nama = isset($_GET['nama']) ? mysqli_real_escape_string($koneksi, $_GET['nama']) : '';
 $prodi = isset($_GET['prodi']) ? mysqli_real_escape_string($koneksi, $_GET['prodi']) : '';
 
 $query = "SELECT * FROM mahasiswa WHERE 1=1";
 
 if (!empty($npm)) {
-    $query .= " AND npm LIKE '%$npm%'";
+    $query .= " AND id LIKE '%$npm%'";
 }
 if (!empty($nama)) {
-    $query .= " AND nama LIKE '%$nama%'";
+    $query .= " AND nama_mahasiswa LIKE '%$nama%'";
 }
 if (!empty($prodi)) {
     $query .= " AND prodi LIKE '%$prodi%'";
@@ -28,8 +28,8 @@ if (mysqli_num_rows($result) > 0) {
             </tr>";
     while($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
-                <td>{$row['npm']}</td>
-                <td>{$row['nama']}</td>
+                <td>{$row['id']}</td>
+                <td>{$row['nama_mahasiswa']}</td>
                 <td>{$row['prodi']}</td>
               </tr>";
     }
